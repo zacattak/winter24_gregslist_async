@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 export class Car {
   constructor (data) {
     this.id = data.id || data._id
@@ -37,7 +39,7 @@ export class Car {
           <p>ENGINE ${this.engineType} ${this.ColorString}</p>
           <p>${this.description}</p>
           <div>
-            <button onclick="app.CarsController.removeCar('${this.id}')" class="btn btn-danger">Delete Car</button>
+           ${this.DeleteButton}
           </div>
         </div>
       </div>
@@ -53,6 +55,14 @@ export class Car {
 
     return `| Color : <i class="mdi mdi-circle fs-2" style="color: ${this.color};"></i>`
 
+  }
+
+  get DeleteButton() {
+    if (AppState.account == null || this.creatorId != AppState.account.id) {
+      return ''
+    }
+
+    return `<button onclick="app.CarsController.removeCar('${this.id}')" class="btn btn-danger">Delete Car</button>`
   }
 }
 

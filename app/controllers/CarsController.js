@@ -11,6 +11,20 @@ function _drawCars() {
   setHTML('carListings', htmlString)
 }
 
+function _drawCarForm() {
+  if (!AppState.account) {
+    return
+  }
+
+  const carFormElement = document.getElementById('carForm')
+
+  if (!carFormElement) {
+    return
+  }
+
+  carFormElement.classList.remove('d-none')
+}
+
 
 export class CarsController {
   constructor () {
@@ -18,6 +32,8 @@ export class CarsController {
     this.getCars()
 
     AppState.on('cars', _drawCars)
+    AppState.on('account', _drawCars)
+    AppState.on('account', _drawCarForm)
   }
 
 
