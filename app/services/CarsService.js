@@ -4,8 +4,16 @@ import { api } from "./AxiosService.js";
 
 class CarsService {
   async removeCar(carId) {
-    const response = await api.delete('api/cars')
+    const response = await api.delete(`api/cars/${carId}`)
     console.log('📡 deleting car', response.data);
+
+    const carIndex = AppState.cars.findIndex(car => car.id == carId)
+
+    if (carIndex == -1) {
+      throw new Error('Index was -1, you messed up developer')
+    }
+
+    AppState.cars.splice(carIndex, 1)
   }
   async createCar(carFormData) {
     // console.log('car form data', carFormData);
