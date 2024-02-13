@@ -1,5 +1,6 @@
 export const dev = window.location.origin.includes('localhost')
-export const baseURL = dev ? 'http://localhost:3000' : ''
+// NOTE this exported variable will be used in your default axios instance
+export const baseURL = dev ? 'https://sandbox.codeworksacademy.com' : ''
 export const domain = ''
 export const audience = ''
 export const clientId = ''

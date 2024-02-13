@@ -1,6 +1,11 @@
+import { api } from "./AxiosService.js";
+
 class CarsService {
-  getCars() {
+  async getCars() {
     console.log('getting cars!');
+
+    const response = await api.get('api/cars')
+    console.log('📡 got cars', response.data);
   }
 
 
