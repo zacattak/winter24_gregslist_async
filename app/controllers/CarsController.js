@@ -8,9 +8,9 @@ export class CarsController {
   }
 
 
-  getCars() {
+  async getCars() {
     try {
-      carsService.getCars()
+      await carsService.getCars()
       Pop.success('GOT CARS')
     } catch (error) {
       console.error(error)
