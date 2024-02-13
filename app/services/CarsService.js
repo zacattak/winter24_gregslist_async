@@ -9,7 +9,15 @@ class CarsService {
     const response = await api.post('api/cars', carFormData)
 
     console.log('📡 creating car', response.data);
+
+    const newCar = new Car(response.data)
+
+    console.log('new car', newCar);
+
+    AppState.cars.push(newCar)
+    // AppState.cars.unshift(newCar)
   }
+
   async getCars() {
     console.log('getting cars!');
 
@@ -20,6 +28,8 @@ class CarsService {
     const newCars = response.data.map(carPOJO => new Car(carPOJO))
 
     console.log('mapped over cars', newCars);
+
+    // newCars.reverse()
 
     AppState.cars = newCars
   }

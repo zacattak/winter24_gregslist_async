@@ -36,6 +36,7 @@ export class Car {
           </div>
           <p>ENGINE ${this.engineType} ${this.ColorString}</p>
           <p>${this.description}</p>
+          <div></div>
         </div>
       </div>
     </div>
