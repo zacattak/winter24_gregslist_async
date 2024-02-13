@@ -43,6 +43,11 @@ export class CarsController {
 
       // TODO where is my engine type
       console.log('object from form', carFormData);
+
+      await carsService.createCar(carFormData)
+
+      // @ts-ignore
+      form.reset()
     } catch (error) {
       console.error(error)
       Pop.error(error)

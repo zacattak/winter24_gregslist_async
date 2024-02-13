@@ -3,6 +3,13 @@ import { Car } from "../models/Car.js";
 import { api } from "./AxiosService.js";
 
 class CarsService {
+  async createCar(carFormData) {
+    console.log('car form data', carFormData);
+
+    const response = await api.post('api/cars')
+
+    console.log('📡 creating car', response.data);
+  }
   async getCars() {
     console.log('getting cars!');
 
