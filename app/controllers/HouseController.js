@@ -7,9 +7,9 @@ export class HouseController {
         this.getHouses()
     }
 
-    getHouses() {
+    async getHouses() {
         try {
-            houseService.getHouses()
+            await houseService.getHouses()
             Pop.success('GOT HOUSES')
         }
         catch (error) {
