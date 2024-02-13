@@ -4,9 +4,9 @@ import { api } from "./AxiosService.js";
 
 class CarsService {
   async createCar(carFormData) {
-    console.log('car form data', carFormData);
+    // console.log('car form data', carFormData);
 
-    const response = await api.post('api/cars')
+    const response = await api.post('api/cars', carFormData)
 
     console.log('📡 creating car', response.data);
   }
