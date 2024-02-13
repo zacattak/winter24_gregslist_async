@@ -11,3 +11,10 @@
   object-fit: cover;
   width: 100%;
 }
+
+
+.house-picture {
+  min-height: 60vh;
+  object-fit: cover;
+  width: 100%;
+}
