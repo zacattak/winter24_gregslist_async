@@ -4,8 +4,8 @@ class HouseService {
     async getHouses() {
         console.log('getting houses!');
 
-        const response = await api.get('api/cars')
-        console.log('got cars', response.data)
+        const response = await api.get('api/houses')
+        console.log('got houses', response.data)
     }
 }
 
