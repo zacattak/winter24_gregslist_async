@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { carsService } from "../services/CarsService.js";
+import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
@@ -34,6 +35,14 @@ export class CarsController {
     try {
       event.preventDefault()
       console.log('creating car');
+
+      const form = event.target
+      console.log('car form', form);
+
+      const carFormData = getFormData(form)
+
+      // TODO where is my engine type
+      console.log('object from form', carFormData);
     } catch (error) {
       console.error(error)
       Pop.error(error)
