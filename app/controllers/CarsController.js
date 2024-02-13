@@ -53,4 +53,23 @@ export class CarsController {
       Pop.error(error)
     }
   }
+
+  async removeCar(carId) {
+    try {
+      console.log('removing car', carId);
+
+      const wantsToRemove = await Pop.confirm('Are you sure you want to delete this car for forever and ever?')
+
+      if (!wantsToRemove) {
+        return
+      }
+
+      await carsService.removeCar(carId)
+
+      Pop.success('Car was deleted')
+    } catch (error) {
+      console.error(error)
+      Pop.error(error)
+    }
+  }
 }

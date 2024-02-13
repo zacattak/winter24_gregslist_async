@@ -36,7 +36,9 @@ export class Car {
           </div>
           <p>ENGINE ${this.engineType} ${this.ColorString}</p>
           <p>${this.description}</p>
-          <div></div>
+          <div>
+            <button onclick="app.CarsController.removeCar('${this.id}')" class="btn btn-danger">Delete Car</button>
+          </div>
         </div>
       </div>
     </div>

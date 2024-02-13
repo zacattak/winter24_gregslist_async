@@ -3,6 +3,10 @@ import { Car } from "../models/Car.js";
 import { api } from "./AxiosService.js";
 
 class CarsService {
+  async removeCar(carId) {
+    const response = await api.delete('api/cars')
+    console.log('📡 deleting car', response.data);
+  }
   async createCar(carFormData) {
     // console.log('car form data', carFormData);
 
