@@ -29,4 +29,13 @@ export class CarsController {
       Pop.error(error)
     }
   }
+
+  async createCar() {
+    try {
+      console.log('creating car');
+    } catch (error) {
+      console.error(error)
+      Pop.error(error)
+    }
+  }
 }
