@@ -15,9 +15,9 @@ class ObservableAppState extends EventEmitter {
    */
   cars = []
 
-  houses[
 
-  ]
+  houses = []
+
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
