@@ -32,6 +32,7 @@ export class CarsController {
 
   async createCar() {
     try {
+      event.preventDefault()
       console.log('creating car');
     } catch (error) {
       console.error(error)
