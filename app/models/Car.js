@@ -6,8 +6,8 @@ export class Car {
     this.imgUrl = data.imgUrl
     this.year = data.year
     this.price = data.price
-    this.description = data.description
-    this.color = data.color
+    this.description = data.description || ''
+    this.color = data.color || ''
     this.engineType = data.engineType
     this.creatorId = data.creatorId
     this.creator = data.creator
@@ -21,27 +21,34 @@ export class Car {
       <div class="row bg-light rounded shadow border border-dark">
         <div class="col-md-4 px-0">
           <img
-            src="https://dealerinspire-image-library-prod.s3.us-east-1.amazonaws.com/images/I3BvjD2zREK0FinQCGoyqYrgkzVq3CNSOH2eNqik.jpg"
-            alt="" class="img-fluid rounded-start car-picture">
+            src="${this.imgUrl}"
+            alt="${this.make + ' ' + this.model}" class="img-fluid rounded-start car-picture">
         </div>
         <div class="col-md-8 p-3">
-          <h2>2004 MAZDA MIATA</h2>
-          <h3>$300</h3>
-          <h3>Listed on 12/12/1200</h3>
+          <h2>${this.year} ${this.make} ${this.model}</h2>
+          <h3>$${this.price}</h3>
+          <h3>Listed on ${this.createdAt.toLocaleDateString()}</h3>
           <div class="d-flex">
-            <h4>Listed by SOME DUDE</h4>
+            <h4>Listed by ${this.creator.name}</h4>
             <img class="creator-picture"
-              src="https://media0.giphy.com/media/7zApYc8tI0fpsR4Rny/giphy.gif?cid=ecf05e47rjwmcrd6jmfmjmncs5x74gigwtvzhd4hus6b24jt&ep=v1_gifs_related&rid=giphy.gif&ct=g"
-              alt="">
+              src="${this.creator.picture}"
+              alt="${this.creator.name}">
           </div>
-          <p>ENGINE | COLOR</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eius, sed quisquam eaque impedit voluptatem ex
-            pariatur commodi dolorum sapiente.</p>
-
+          <p>ENGINE ${this.engineType} ${this.ColorString}</p>
+          <p>${this.description}</p>
         </div>
       </div>
     </div>
     `
+
+  }
+
+  get ColorString() {
+    if (!this.color) {
+      return ''
+    }
+
+    return `| Color : <i class="mdi mdi-circle fs-2" style="color: ${this.color};"></i>`
 
   }
 }
