@@ -5,6 +5,7 @@ class CarsService {
     console.log('getting cars!');
 
     const response = await api.get('api/cars')
+
     console.log('📡 got cars', response.data);
   }
 
