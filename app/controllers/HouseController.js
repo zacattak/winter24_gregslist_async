@@ -28,5 +28,6 @@ export class HouseController {
             console.error(error)
             Pop.error(error)
         }
+
     }
 }

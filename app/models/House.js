@@ -22,9 +22,9 @@ export class House {
             </div>
             <div class="col-md-8 p-3">
             <h1>Age:${this.year}</h1>
-            <h1>Price:${this.price}</h1>
+            <h2>Price:${this.price}</h2>
             <div class="d-flex">
-            <h1>Listed by:${this.creatorName}</h1>
+            <p>Listed by:${this.creatorName}</p>
             <p>Listed on:${this.createdAt}Updated:${this.updatedAt}</p>
 
                 </div>
