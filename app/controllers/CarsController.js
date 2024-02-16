@@ -27,7 +27,7 @@ function _drawCarForm() {
 
 
 export class CarsController {
-  constructor () {
+  constructor() {
     console.log('Cars controller loaded');
     this.getCars()
 
